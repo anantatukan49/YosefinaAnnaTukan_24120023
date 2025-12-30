@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>– UAS Pemrograman Web</title>
+
+    <title> Yosefina Anna M Tukan – UAS Pemrograman Web</title>
     <style>
         /* CSS kamu */
     </style>
