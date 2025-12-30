@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -98,15 +98,15 @@
 
     <!-- HEADER -->
     <div class="header">
-        <b>Nama : Yosefina Anna</b>
+        <b>Nama : Yosefina Anna Maria Tukan</b>
         <b>NPM : 24120023</b>
     </div>
 
     <!-- JUDUL -->
     <div class="judul">
         <p>
-            <b>Nama :</b> Yosefina Anna <br>
-            <b>NPM :</b> 24120020
+            <b>Nama :</b> Yosefina Anna Maria Tukan <br>
+            <b>NPM :</b> 24120023
         </p>
     </div>
 
