@@ -2,165 +2,193 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Yosefina – UAS Pemrograman Web</title>
+    <title>Data Nilai Mahasiswa</title>
 
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             background: #e6e6e6;
-            margin: 0;
         }
-        header {
-            background: #3f6d2a;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        header p {
-            margin: 5px 0 0;
+
+        /* HEADER ATAS */
+        .header {
+            background: #e0e0e0;
+            padding: 15px 30px;
             font-size: 14px;
         }
+
+        .header b {
+            display: block;
+        }
+
+        /* JUDUL */
+        .judul {
+            padding: 30px;
+        }
+
+        .judul h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .judul p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* CONTAINER UTAMA */
         .container {
             display: flex;
-            gap: 20px;
-            padding: 20px;
+            gap: 30px;
+            padding: 0 30px 40px 30px;
         }
+
+        /* BOX */
         .box {
-            background: #dfe8cf;
-            padding: 20px;
+            background: #e4ecd2;
             width: 50%;
+            padding: 20px;
             border: 1px solid #999;
         }
+
         .box h3 {
             text-align: center;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #aaa;
         }
+
+        /* FORM */
         label {
             display: inline-block;
             width: 130px;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
+
         input {
+            width: 220px;
             padding: 5px;
-            width: 200px;
         }
+
         .btn {
-            margin-top: 10px;
+            margin-top: 15px;
         }
+
         button {
             padding: 5px 15px;
             margin-right: 5px;
-            cursor: pointer;
         }
-        .output p {
-            margin: 6px 0;
-        }
+
         .note {
-            font-size: 12px;
             margin-top: 15px;
-        }
-        footer {
-            text-align: center;
             font-size: 12px;
-            padding: 10px;
-            color: #555;
+        }
+
+        /* OUTPUT */
+        .output p {
+            margin: 12px 0;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>UAS PEMROGRAMAN WEB</h1>
-    <p>Nama : <b>Yosefina Anna M Tukan</b> | Aplikasi Perhitungan Nilai Mahasiswa</p>
-</header>
-
-<div class="container">
-
-    <!-- INPUT -->
-    <div class="box">
-        <h3>INPUT DATA NILAI MAHASISWA</h3>
-        <hr>
-
-        <label>NIM</label>
-        <input type="text" id="nim"><br>
-
-        <label>Nama Mahasiswa</label>
-        <input type="text" id="nama"><br>
-
-        <label>Nilai UTS</label>
-        <input type="number" id="uts"><br>
-
-        <label>Nilai UAS</label>
-        <input type="number" id="uas"><br>
-
-        <label>Nilai Tugas</label>
-        <input type="number" id="tugas"><br>
-
-        <div class="btn">
-            <button onclick="proses()">Proses</button>
-            <button onclick="resetForm()">Batal</button>
-        </div>
-
-        <div class="note">
-            UTS 30% | UAS 40% | TUGAS 30% <br>
-            85–100 = A | 70–84 = B | 60–69 = C | 40–59 = D | &lt;40 = E
-        </div>
+    <!-- HEADER -->
+    <div class="header">
+        <b>Nama : Yosefina Anna</b>
+        <b>NPM : 24120020</b>
     </div>
 
-    <!-- OUTPUT -->
-    <div class="box output">
-        <h3>HASIL PERHITUNGAN</h3>
-        <hr>
-
-        <p><b>NIM :</b> <span id="o_nim"></span></p>
-        <p><b>Nama Mahasiswa :</b> <span id="o_nama"></span></p>
-        <p><b>Nilai UTS :</b> <span id="o_uts"></span></p>
-        <p><b>Nilai UAS :</b> <span id="o_uas"></span></p>
-        <p><b>Nilai Tugas :</b> <span id="o_tugas"></span></p>
-        <p><b>Index :</b> <span id="o_index"></span></p>
-
-        <hr>
+    <!-- JUDUL -->
+    <div class="judul">
+        <h1>LATIHAN</h1>
+        <p>
+            <b>Nama :</b> Yosefina Anna <br>
+            <b>NPM :</b> 24120020
+        </p>
     </div>
 
-</div>
+    <!-- KONTEN -->
+    <div class="container">
 
-<footer>
-    © 2025 – Yosefina | UAS Pemrograman Web
-</footer>
+        <!-- INPUT -->
+        <div class="box">
+            <h3>DATA NILAI MAHASISWA</h3>
 
-<script>
-function proses() {
-    let nim = document.getElementById("nim").value;
-    let nama = document.getElementById("nama").value;
-    let uts = parseFloat(document.getElementById("uts").value);
-    let uas = parseFloat(document.getElementById("uas").value);
-    let tugas = parseFloat(document.getElementById("tugas").value);
+            <label>Masukan NIM</label>
+            <input type="text" id="nim"><br>
 
-    let nilaiAkhir = (uts * 0.3) + (uas * 0.4) + (tugas * 0.3);
-    let index = "";
+            <label>Nama Mahasiswa</label>
+            <input type="text" id="nama"><br>
 
-    if (nilaiAkhir >= 85) index = "A";
-    else if (nilaiAkhir >= 70) index = "B";
-    else if (nilaiAkhir >= 60) index = "C";
-    else if (nilaiAkhir >= 40) index = "D";
-    else index = "E";
+            <label>Nilai UTS</label>
+            <input type="number" id="uts"><br>
 
-    document.getElementById("o_nim").innerText = nim;
-    document.getElementById("o_nama").innerText = nama;
-    document.getElementById("o_uts").innerText = uts;
-    document.getElementById("o_uas").innerText = uas;
-    document.getElementById("o_tugas").innerText = tugas;
-    document.getElementById("o_index").innerText = index;
-}
+            <label>Nilai UAS</label>
+            <input type="number" id="uas"><br>
 
-function resetForm() {
-    document.querySelectorAll("input").forEach(i => i.value = "");
-    document.querySelectorAll("span").forEach(s => s.innerText = "");
-}
-</script>
+            <label>Nilai Tugas</label>
+            <input type="number" id="tugas"><br>
+
+            <div class="btn">
+                <button onclick="proses()">Proses</button>
+                <button onclick="batal()">Batal</button>
+            </div>
+
+            <div class="note">
+                UTS 30% | UAS 40% | TUGAS 30% <br>
+                85–100 = A | 70–84 = B | 60–69 = C | 40–59 = D | &lt;40 = E
+            </div>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="box output">
+            <h3>DATA NILAI MAHASISWA</h3>
+
+            <p><b>NIM :</b> <span id="o_nim"></span></p>
+            <p><b>Nama Mahasiswa :</b> <span id="o_nama"></span></p>
+            <p><b>Nilai UTS :</b> <span id="o_uts"></span></p>
+            <p><b>Nilai UAS :</b> <span id="o_uas"></span></p>
+            <p><b>Nilai Tugas :</b> <span id="o_tugas"></span></p>
+            <p><b>Index :</b> <span id="o_index"></span></p>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        function proses() {
+            let nim = document.getElementById("nim").value;
+            let nama = document.getElementById("nama").value;
+            let uts = parseFloat(document.getElementById("uts").value);
+            let uas = parseFloat(document.getElementById("uas").value);
+            let tugas = parseFloat(document.getElementById("tugas").value);
+
+            let nilaiAkhir = (uts * 0.3) + (uas * 0.4) + (tugas * 0.3);
+            let index = "";
+
+            if (nilaiAkhir >= 85) index = "A";
+            else if (nilaiAkhir >= 70) index = "B";
+            else if (nilaiAkhir >= 60) index = "C";
+            else if (nilaiAkhir >= 40) index = "D";
+            else index = "E";
+
+            document.getElementById("o_nim").innerText = nim;
+            document.getElementById("o_nama").innerText = nama;
+            document.getElementById("o_uts").innerText = uts;
+            document.getElementById("o_uas").innerText = uas;
+            document.getElementById("o_tugas").innerText = tugas;
+            document.getElementById("o_index").innerText = index;
+        }
+
+        function batal() {
+            document.querySelectorAll("input").forEach(i => i.value = "");
+            document.querySelectorAll("span").forEach(s => s.innerText = "");
+        }
+    </script>
 
 </body>
 </html>
